@@ -11,9 +11,9 @@
 
         //✧ <-- melee symbol. (OLD), 🗡 (U+2020) <-- melee Symbol (NEW)
 
-        static char mSymbol = '\u2020';
+        //static char mSymbol = '\u2020';
 
-        public MeleeWeapon(Types meleeType, int x = 0, int y = 0) : base(mSymbol, x, y)
+        public MeleeWeapon(Types meleeType, int x = 0, int y = 0) : base('✧', x, y)
         {
             switch(meleeType)
             {

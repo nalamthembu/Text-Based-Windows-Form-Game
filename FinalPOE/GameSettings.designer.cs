@@ -46,6 +46,8 @@ namespace FinalPOE
             this.txtNumGold = new System.Windows.Forms.TextBox();
             this.lblError = new System.Windows.Forms.Label();
             this.btnLoad = new System.Windows.Forms.Button();
+            this.lblWeaponDrop = new System.Windows.Forms.Label();
+            this.txtWeaponDrop = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // lblMinWidth
@@ -167,7 +169,7 @@ namespace FinalPOE
             // 
             // btnStart
             // 
-            this.btnStart.Location = new System.Drawing.Point(13, 249);
+            this.btnStart.Location = new System.Drawing.Point(13, 308);
             this.btnStart.Margin = new System.Windows.Forms.Padding(2);
             this.btnStart.Name = "btnStart";
             this.btnStart.Size = new System.Drawing.Size(310, 43);
@@ -199,7 +201,7 @@ namespace FinalPOE
             // 
             this.lblError.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblError.ForeColor = System.Drawing.Color.Maroon;
-            this.lblError.Location = new System.Drawing.Point(13, 342);
+            this.lblError.Location = new System.Drawing.Point(13, 400);
             this.lblError.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblError.Name = "lblError";
             this.lblError.Size = new System.Drawing.Size(310, 37);
@@ -208,7 +210,7 @@ namespace FinalPOE
             // 
             // btnLoad
             // 
-            this.btnLoad.Location = new System.Drawing.Point(13, 297);
+            this.btnLoad.Location = new System.Drawing.Point(13, 355);
             this.btnLoad.Margin = new System.Windows.Forms.Padding(2);
             this.btnLoad.Name = "btnLoad";
             this.btnLoad.Size = new System.Drawing.Size(310, 43);
@@ -217,11 +219,32 @@ namespace FinalPOE
             this.btnLoad.UseVisualStyleBackColor = true;
             this.btnLoad.Click += new System.EventHandler(this.btnLoad_Click);
             // 
+            // lblWeaponDrop
+            // 
+            this.lblWeaponDrop.AutoSize = true;
+            this.lblWeaponDrop.Location = new System.Drawing.Point(13, 265);
+            this.lblWeaponDrop.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblWeaponDrop.Name = "lblWeaponDrop";
+            this.lblWeaponDrop.Size = new System.Drawing.Size(119, 15);
+            this.lblWeaponDrop.TabIndex = 17;
+            this.lblWeaponDrop.Text = "Amount Of Weapons";
+            // 
+            // txtWeaponDrop
+            // 
+            this.txtWeaponDrop.Location = new System.Drawing.Point(142, 262);
+            this.txtWeaponDrop.Margin = new System.Windows.Forms.Padding(2);
+            this.txtWeaponDrop.Name = "txtWeaponDrop";
+            this.txtWeaponDrop.Size = new System.Drawing.Size(181, 23);
+            this.txtWeaponDrop.TabIndex = 18;
+            this.txtWeaponDrop.Text = "5";
+            // 
             // GameSettings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(336, 398);
+            this.ClientSize = new System.Drawing.Size(336, 455);
+            this.Controls.Add(this.txtWeaponDrop);
+            this.Controls.Add(this.lblWeaponDrop);
             this.Controls.Add(this.btnLoad);
             this.Controls.Add(this.lblError);
             this.Controls.Add(this.txtNumGold);
@@ -266,5 +289,7 @@ namespace FinalPOE
         private System.Windows.Forms.TextBox txtNumGold;
         private System.Windows.Forms.Label lblError;
         private System.Windows.Forms.Button btnLoad;
+        private System.Windows.Forms.Label lblWeaponDrop;
+        private System.Windows.Forms.TextBox txtWeaponDrop;
     }
 }

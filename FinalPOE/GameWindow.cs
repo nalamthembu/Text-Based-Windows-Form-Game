@@ -52,9 +52,9 @@ namespace FinalPOE
             }
         }
 
-        public void InitialiseGame(int minH, int minW, int MaxH, int MaxW, int numEnemy, int numGold)
+        public void InitialiseGame(int minH, int minW, int MaxH, int MaxW, int numEnemy, int numGold, int numWeapon)
         {
-            engine = new GameEngine(minH, minW, MaxH, MaxW, numEnemy, numGold);
+            engine = new GameEngine(minH, minW, MaxH, MaxW, numEnemy, numGold, numWeapon);
             RefreshWindow();
             RefreshHUD();
         }

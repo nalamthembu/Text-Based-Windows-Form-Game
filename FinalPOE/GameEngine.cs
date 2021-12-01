@@ -14,9 +14,9 @@ namespace FinalPOE
 
         public Shop Shop { get { return shop; } }
 
-        public GameEngine(int minH, int minW, int MaxH, int MaxW, int numEnemy, int numGold)
+        public GameEngine(int minH, int minW, int MaxH, int MaxW, int numEnemy, int numGold, int numWeapon)
         {
-            map = new Map(minH, minW, MaxH, MaxW,numEnemy, numGold);
+            map = new Map(minH, minW, MaxH, MaxW,numEnemy, numGold, numWeapon);
         }
 
         public GameEngine()
@@ -68,7 +68,16 @@ namespace FinalPOE
                 if (!(e is Mage) && !e.IsDead()) //If its not a mage and is not dead, move.
                 {
                     MovementEnum movDir = e.ReturnMove();
+                    
                     e.Move(movDir);
+
+                    Item possibleItem = map.GetItemAtPosition(e.X, e.Y);
+
+                    if (possibleItem != null)
+                    {
+                        e.PickUp(possibleItem);
+                    }
+
                     map.UpdateVision();
                 }
 
@@ -141,6 +150,8 @@ namespace FinalPOE
                     }
                 }
             }
+
+            map.UpdateVision();
         }
 
         public Character PlayerAttack(MovementEnum dir)
@@ -171,6 +182,8 @@ namespace FinalPOE
             bf.Serialize(stream, map);
 
             stream.Close();
+
+            System.Diagnostics.Debug.WriteLine("Saved Successfully");
         }
 
         public void Load()
@@ -185,6 +198,7 @@ namespace FinalPOE
 
             stream.Close();
 
+            System.Diagnostics.Debug.WriteLine("Loaded Successfully");
         }
     }
 }

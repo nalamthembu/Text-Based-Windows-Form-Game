@@ -22,7 +22,7 @@ namespace FinalPOE
         [NonSerialized]
         readonly Random r = new Random();
 
-        public Map(int minHeight, int minWidth, int maxHeight, int maxWidth, int enemyCount, int goldCount)
+        public Map(int minHeight, int minWidth, int maxHeight, int maxWidth, int enemyCount, int goldCount, int weapCount)
         {
             mapWidth = r.Next(minWidth, maxWidth + 1);
             mapHeight = r.Next(minHeight, maxHeight + 1);
@@ -39,12 +39,16 @@ namespace FinalPOE
                 enemyArray[i] = (Enemy)Create(TileEnum.ENEMY);
             }
 
-            itemArray = new Item[goldCount];
+            itemArray = new Item[goldCount + weapCount]; //with weapons.
             for (int i = 0; i < goldCount; i++)
             {
                 itemArray[i] = (Gold)Create(TileEnum.GOLD);
             }
-            
+
+            for(int i = goldCount; i < goldCount + weapCount; i++)
+            {
+                itemArray[i] = (Weapon)Create(TileEnum.WEAPON);
+            }
 
             UpdateVision();
 
@@ -162,10 +166,9 @@ namespace FinalPOE
                         {
                             newTile = new Leader(x, y); //the hero would have been created by now.
 
-                            Leader l =(Leader) newTile;
-                            l.Target = hero;
-
-                            newTile = l;
+                            Leader l = (Leader)newTile;
+                            l.Target = hero; //setting the hero as the target.
+                            newTile = l; //reassigningg the newTile.
                         }
                     }
 
@@ -180,6 +183,25 @@ namespace FinalPOE
                      * the Gold class constructor anyway so theres 
                      * no need to repeat that process here
                      */
+                    break;
+
+                case TileEnum.WEAPON:
+                    if (r.Next(0, 10) <= 5) //50% chance of spawning a melee weapon.
+                    {
+                        if (r.Next(0, 2) == 1)//50% chance of spawning a dagger.
+                        {
+                            newTile = new MeleeWeapon(Types.DAGGER, x, y);
+                        }
+                        else newTile = new MeleeWeapon(Types.LONGSWORD, x, y);
+                    }
+                    else
+                    {
+                        if (r.Next(0, 2) == 1)//50% chance of spawning a longbow.
+                        {
+                            newTile = new RangedWeapon(RangedTypes.LONGBOW, x, y);
+                        }
+                        else newTile = new RangedWeapon(RangedTypes.RIFLE, x, y);
+                    }
                     break;
             }
 
@@ -256,10 +278,13 @@ namespace FinalPOE
                         {
                             value += "$";
                         }
+
+                        if (item is Weapon weapon)
+                        {
+                            value += weapon.symbol;
+                        }
                     }
-
                 }
-
                 value += "\n";
             }
 

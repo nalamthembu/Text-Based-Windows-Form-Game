@@ -35,11 +35,12 @@ namespace FinalPOE
                 int.Parse(txtMaxHeight.Text),//2
                 int.Parse(txtMaxWidth.Text),//3
                 int.Parse(txtNumEnemies.Text),//4
-                int.Parse(txtNumGold.Text)//5
+                int.Parse(txtNumGold.Text),//5
+                int.Parse(txtWeaponDrop.Text)//6
                 };
 
                 //int minH, int minW, int maxH, int maxW, int nEnemy
-                gameWindow.InitialiseGame(iV[0], iV[1], iV[2], iV[3], iV[4], iV[5]);
+                gameWindow.InitialiseGame(iV[0], iV[1], iV[2], iV[3], iV[4], iV[5], iV[6]);
 
                 Hide();
 
@@ -64,6 +65,7 @@ namespace FinalPOE
             catch (System.IO.FileNotFoundException)
             {
                 lblError.Text = "Could not find any save game files";
+                System.Diagnostics.Debug.WriteLine("Error Occured while Loading.");
                 return;
             }
 

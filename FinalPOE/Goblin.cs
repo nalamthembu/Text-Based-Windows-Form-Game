@@ -22,13 +22,12 @@ namespace FinalPOE
             {
                 moveDir = random.Next(0, 4);
                 tries--;
-
                 if (tries == 0)
                 {
                     return MovementEnum.NOMOVEMENT;
                 }
             }
-            while (!(vision[moveDir] is EmptyTile));
+            while (!(vision[moveDir] is EmptyTile) || !(vision[moveDir] is EmptyTile));
 
             return (MovementEnum) moveDir;
         }

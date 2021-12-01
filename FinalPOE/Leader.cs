@@ -3,6 +3,7 @@ using System;
 
 namespace FinalPOE
 {
+    [Serializable]
     public class Leader : Enemy
     {
         private Tile target;
@@ -33,40 +34,39 @@ namespace FinalPOE
                      * just limit it to a few tries.
                      */
 
-                    int tries = 0;
+                    int tries = 10;
 
-                    for(int i = 0; i < vision.Length;i++)
+                    for (int i = 0; i < vision.Length; i++)
                     {
-                        /*If the difference between my X and the targets X is negative,
-                         then the absolute number of the difference is how many spaces to the right 
-                        I am away from the target*/
-                        if (target.X == vision[i].X && this.X - target.X < 0)
+                        if (vision[i] is EmptyTile || vision[i] is Weapon)
                         {
-                            //Therefore I should move to the right, Only if the space is empty.
-                            if(vision[i] is EmptyTile)
-                            return RIGHT;
-                        }
-                        /*If the difference between my X and the targets X is positive,
-                         the difference is how many spaces to the left I am away from the target*/
-                        else if (target.X == vision[i].X && this.X - target.X > 0)
-                        {
-                            //Therefore I should move to the left, Only if the space is empty.
-                            if (vision[i] is EmptyTile)
-                            return LEFT;
-                        }
-                        
-                        //Same for up and down.
+                            /*If the difference between my X and the targets X is negative,
+                             then the absolute number of the difference is how many spaces to the right 
+                            I am away from the target*/
+                            if (target.X == vision[i].X && this.X - target.X < 0)
+                            {
+                                //Therefore I should move to the right, Only if the space is empty.
+                                return RIGHT;
+                            }
+                            /*If the difference between my X and the targets X is positive,
+                             the difference is how many spaces to the left I am away from the target*/
+                            else if (target.X == vision[i].X && this.X - target.X > 0)
+                            {
+                                //Therefore I should move to the left, Only if the space is empty.
+                                return LEFT;
+                            }
 
-                        if (target.Y == vision[i].Y && this.Y - target.Y < 0)
-                        {
-                            if (vision[i] is EmptyTile)
+                            //Same for up and down.
+
+                            if (target.Y == vision[i].Y && this.Y - target.Y < 0)
+                            {
                                 return UP;
-                        }
+                            }
 
-                        if (target.Y == vision[i].Y && this.Y - target.Y > 0)
-                        {
-                            if (vision[i] is EmptyTile)
+                            if (target.Y == vision[i].Y && this.Y - target.Y > 0)
+                            {
                                 return DOWN;
+                            }
                         }
                     }
 
@@ -74,12 +74,13 @@ namespace FinalPOE
                     {
                         moveDir = random.Next(0, 4);
                         tries--;
+                        
                         if (tries == 0)
                         {
                             return NOMOVEMENT;
                         }
                     }
-                    while (!(vision[moveDir] is EmptyTile));
+                    while (!(vision[moveDir] is EmptyTile) || !(vision[moveDir] is Weapon) || vision[moveDir] is Obstacle);
                 }
             }
 
