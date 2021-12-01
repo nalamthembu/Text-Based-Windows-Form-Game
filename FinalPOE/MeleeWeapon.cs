@@ -9,9 +9,11 @@
     {
         public new int Range { get { return 1; } } //overridden accessor.
 
-        //✧ <-- melee symbol.
+        //✧ <-- melee symbol. (OLD), 🗡 (U+2020) <-- melee Symbol (NEW)
 
-        public MeleeWeapon(Types meleeType, int x = 0, int y = 0) : base('✧', x, y)
+        static char mSymbol = '\u2020';
+
+        public MeleeWeapon(Types meleeType, int x = 0, int y = 0) : base(mSymbol, x, y)
         {
             switch(meleeType)
             {

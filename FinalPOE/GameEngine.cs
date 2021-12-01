@@ -10,6 +10,10 @@ namespace FinalPOE
         private Map map;
         public Map Map { get { return map; } }
 
+        private Shop shop; //needs to be initialised.
+
+        public Shop Shop { get { return shop; } }
+
         public GameEngine(int minH, int minW, int MaxH, int MaxW, int numEnemy, int numGold)
         {
             map = new Map(minH, minW, MaxH, MaxW,numEnemy, numGold);

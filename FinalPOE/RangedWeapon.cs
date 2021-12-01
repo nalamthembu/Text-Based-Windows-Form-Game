@@ -7,7 +7,8 @@ namespace FinalPOE
         RIFLE,LONGBOW
     }
 
-    //Long range weapon symbol - ✦
+    //Long range weapon symbol - ✦ (OLD), 🔫 <- NEW (U+1F52B) -- didn't work.
+
     public class RangedWeapon : Weapon
     {
         public new int Range { get { return base.range; } }
