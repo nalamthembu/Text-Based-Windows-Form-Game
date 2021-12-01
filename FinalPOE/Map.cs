@@ -44,8 +44,9 @@ namespace FinalPOE
             {
                 itemArray[i] = (Gold)Create(TileEnum.GOLD);
             }
-
-            for(int i = goldCount; i < goldCount + weapCount; i++)
+            /*eg. if gold count and weapon count is 5 you want the loop to stop at 10,
+            so the goldCount + weaponCount is the correct length. */
+            for (int i = goldCount; i < goldCount + weapCount; i++) 
             {
                 itemArray[i] = (Weapon)Create(TileEnum.WEAPON);
             }

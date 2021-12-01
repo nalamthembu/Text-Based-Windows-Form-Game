@@ -160,7 +160,7 @@ namespace FinalPOE
             if (map.Hero.Vision[visionIndex] is Character target)
             {
                 target = (Character)map.Hero.Vision[visionIndex];
-                if (target.IsDead())
+                if (!target.IsDead())
                 {
                     map.Hero.Attack(target);
                 }
