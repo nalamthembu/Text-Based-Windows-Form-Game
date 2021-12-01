@@ -65,7 +65,7 @@ namespace FinalPOE
         {
             foreach(Enemy e in map.enemyArray)
             {
-                if (e is Goblin && !e.IsDead())
+                if (!(e is Mage) && !e.IsDead()) //If its not a mage and is not dead, move.
                 {
                     MovementEnum movDir = e.ReturnMove();
                     e.Move(movDir);

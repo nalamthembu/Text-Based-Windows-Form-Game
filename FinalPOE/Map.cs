@@ -148,9 +148,26 @@ namespace FinalPOE
             {
                 case TileEnum.ENEMY:
                     //Randomly chooses between 0 and 10 ---> [anything more than 8 = goblin], 0 - 5 = Mage.
-                   if (r.Next(0, 11) <= 7)
+                    if (r.Next(0, 11) <= 5)
+                    {
                         newTile = new Goblin(x, y);
-                    else newTile = new Mage(x, y); 
+                    }
+                    else
+                    {
+                        if (r.Next(0, 2) == 1)
+                        {
+                            newTile = new Mage(x, y);
+                        }
+                        else
+                        {
+                            newTile = new Leader(x, y); //the hero would have been created by now.
+
+                            Leader l =(Leader) newTile;
+                            l.Target = hero;
+
+                            newTile = l;
+                        }
+                    }
 
                     break;
                 case TileEnum.HERO:
@@ -228,7 +245,10 @@ namespace FinalPOE
                         {
                             value += "M";
                         }
-
+                        else if (enemy is Leader)
+                        {
+                            value += "L";
+                        }
                     }
                     else if (map[x, y] is Item item)
                     {

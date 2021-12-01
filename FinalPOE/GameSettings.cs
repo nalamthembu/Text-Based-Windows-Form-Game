@@ -53,16 +53,6 @@ namespace FinalPOE
 
         private void GameWindow_FormClosed(object sender, FormClosedEventArgs e){Close();}
 
-        private void txtNumEnemies_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void GameSettings_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnLoad_Click(object sender, EventArgs e)
         {
             engine = new GameEngine();

@@ -42,14 +42,16 @@ namespace FinalPOE
                         I am away from the target*/
                         if (target.X == vision[i].X && this.X - target.X < 0)
                         {
-                            //Therefore I should move to the right.
+                            //Therefore I should move to the right, Only if the space is empty.
+                            if(vision[i] is EmptyTile)
                             return RIGHT;
                         }
                         /*If the difference between my X and the targets X is positive,
                          the difference is how many spaces to the left I am away from the target*/
                         else if (target.X == vision[i].X && this.X - target.X > 0)
                         {
-                            //Therefore I should move to the left.
+                            //Therefore I should move to the left, Only if the space is empty.
+                            if (vision[i] is EmptyTile)
                             return LEFT;
                         }
                         
@@ -57,12 +59,14 @@ namespace FinalPOE
 
                         if (target.Y == vision[i].Y && this.Y - target.Y < 0)
                         {
-                            return UP;
+                            if (vision[i] is EmptyTile)
+                                return UP;
                         }
 
                         if (target.Y == vision[i].Y && this.Y - target.Y > 0)
                         {
-                            return DOWN;
+                            if (vision[i] is EmptyTile)
+                                return DOWN;
                         }
                     }
 
