@@ -37,7 +37,9 @@ namespace FinalPOE
             int oldY = h.Y;
 
             h.Move(move);
-            
+
+            //System.Diagnostics.Debug.WriteLine("("+h.X + "," + h.Y + ")");
+
 
             Item possibleItem = map.GetItemAtPosition(h.X,h.Y); 
             
