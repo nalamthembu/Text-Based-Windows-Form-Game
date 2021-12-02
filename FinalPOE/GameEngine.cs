@@ -2,6 +2,7 @@
 using static FinalPOE.MovementEnum;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
+using System.Diagnostics;
 
 namespace FinalPOE
 {
@@ -56,17 +57,22 @@ namespace FinalPOE
 
             map.UpdateVision();
 
-            MoveEnemies();
+            MoveEnemies(move);
             //Character vision is updated in Map.UpdateVision()
             return true;
         }
 
-        public void MoveEnemies()
+        public void MoveEnemies(MovementEnum playersMovement)
         {
             foreach(Enemy e in map.enemyArray)
             {
                 if (!(e is Mage) && !e.IsDead()) //If its not a mage and is not dead, move.
                 {
+                    if (!(e is Leader))
+                    {
+                        e.ReturnMove(playersMovement);
+                    }
+
                     MovementEnum movDir = e.ReturnMove();
                     
                     e.Move(movDir);
@@ -76,6 +82,8 @@ namespace FinalPOE
                     if (possibleItem != null)
                     {
                         e.PickUp(possibleItem);
+
+                        Debug.WriteLine(e.GetType().Name + " has picked up a " + possibleItem.GetType().Name);
                     }
 
                     map.UpdateVision();

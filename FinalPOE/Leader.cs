@@ -14,77 +14,52 @@ namespace FinalPOE
 
         public override MovementEnum ReturnMove(MovementEnum move = NOMOVEMENT)
         {
-            /*' A leader will always move towards its target(the Hero).
-                If it can not move towards its target because something is
-                in the way (based on the vision array), it continuously rolls a random
-                direction until it finds a valid direction in which to move.
-            */
+            MovementEnum moveDir = NOMOVEMENT;
 
-            int moveDir = 0;
+            int tries = 10;
+            int i = 0;
 
-            if (target is Character t)
+            System.Diagnostics.Debug.WriteLine("L - ({0},{1}), TARGET - ({2},{3})", X, Y, target.X, target.Y);
+
+            if (vision[(int)move - 1] is EmptyTile || vision[(int)move - 1] is Item)
             {
-                if (DistanceTo(t) > 0)
+                if (move is UP)
                 {
-                    /* if something was in the way in every direction, 
-                     * theres no need to continue looking for a valid direction 
-                     * because every direction is blocked, so you'd be infinitely 
-                     * looking for an unblocked path when there is none. so I will 
-                     * simply add something to stop it from infinitely looking and 
-                     * just limit it to a few tries.
-                     */
+                    return DOWN;
+                }
+                else if (move is DOWN)
+                {
+                    return UP;
+                }
 
-                    int tries = 10;
+                if (move is RIGHT)
+                {
+                    return LEFT;
+                }
 
-                    for (int i = 0; i < vision.Length; i++)
-                    {
-                        if (vision[i] is EmptyTile || vision[i] is Weapon)
-                        {
-                            /*If the difference between my X and the targets X is negative,
-                             then the absolute number of the difference is how many spaces to the right 
-                            I am away from the target*/
-                            if (target.X == vision[i].X && this.X - target.X < 0)
-                            {
-                                //Therefore I should move to the right, Only if the space is empty.
-                                return RIGHT;
-                            }
-                            /*If the difference between my X and the targets X is positive,
-                             the difference is how many spaces to the left I am away from the target*/
-                            else if (target.X == vision[i].X && this.X - target.X > 0)
-                            {
-                                //Therefore I should move to the left, Only if the space is empty.
-                                return LEFT;
-                            }
-
-                            //Same for up and down.
-
-                            if (target.Y == vision[i].Y && this.Y - target.Y < 0)
-                            {
-                                return UP;
-                            }
-
-                            if (target.Y == vision[i].Y && this.Y - target.Y > 0)
-                            {
-                                return DOWN;
-                            }
-                        }
-                    }
-
-                    do
-                    {
-                        moveDir = random.Next(0, 4);
-                        tries--;
-                        
-                        if (tries == 0)
-                        {
-                            return NOMOVEMENT;
-                        }
-                    }
-                    while (!(vision[moveDir] is EmptyTile) || !(vision[moveDir] is Weapon) || vision[moveDir] is Obstacle);
+                if (move is LEFT)
+                {
+                    return RIGHT;
                 }
             }
 
-            return (MovementEnum) moveDir;
+            do
+            {
+                i = random.Next(0, 4);
+
+                if (tries == 0)
+                    break;
+
+                tries--;
+            }
+            while (vision[i] is not EmptyTile || vision[i] is not Item);
+
+            if (vision[i] is EmptyTile || vision[i] is Item)
+            {
+                moveDir = (MovementEnum)i;
+            }
+
+            return moveDir;
         }
     }
 }

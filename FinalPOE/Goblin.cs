@@ -27,7 +27,7 @@ namespace FinalPOE
                     return MovementEnum.NOMOVEMENT;
                 }
             }
-            while (!(vision[moveDir] is EmptyTile) || !(vision[moveDir] is EmptyTile));
+            while (!(vision[moveDir] is EmptyTile)); //Need to figure out why adding an item check here stops the goblins from moving.
 
             return (MovementEnum) moveDir;
         }
