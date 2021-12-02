@@ -28,22 +28,27 @@ namespace FinalPOE
             {
                 if (move is UP && y - Target.Y > 0 || move is DOWN && y - Target.Y > 0)
                 {
-                    return DOWN;
+                    return UP;
                 }
 
                 if (move is UP && y - Target.Y < 0 || move is DOWN && y - Target.Y < 0)
                 {
-                    return UP;
+                    return DOWN;
                 }
 
                 if (move is RIGHT && x - Target.X > 0 || move is LEFT && x - Target.X < 0)
                 {
-                    return LEFT;
+                    return RIGHT;
                 }
 
                 if (move is LEFT && y - Target.Y < 0 || move is RIGHT && y - Target.Y < 0)
                 {
-                    return RIGHT;
+                    return LEFT;
+                }
+
+                if (move is RIGHT && x - Target.X == 0 || move is LEFT && x - Target.X == 0)
+                {
+                    return NOMOVEMENT;
                 }
             }
 
