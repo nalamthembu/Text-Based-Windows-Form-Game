@@ -11,6 +11,7 @@ namespace FinalPOE
     {
         public Goblin(int x, int y) : base(x,y, 10, 10) 
         {
+            weapon = new MeleeWeapon(Types.DAGGER); //spawns in with a dagger.
         }
 
         public override MovementEnum ReturnMove(MovementEnum move)

@@ -29,6 +29,7 @@
                     durability = 6;
                     damage = 4;
                     cost = 5;
+                    range = 2;
                     break;
             }
         }

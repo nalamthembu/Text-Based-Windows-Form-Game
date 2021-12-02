@@ -10,7 +10,10 @@ namespace FinalPOE
 
         public Tile Target { get { return target; } set { target = value; } }
 
-        public Leader(int x, int y) : base(x, y, 2, 20) { }
+        public Leader(int x, int y) : base(x, y, 2, 20) 
+        {
+            weapon = new MeleeWeapon(Types.LONGSWORD);
+        }
 
         public override MovementEnum ReturnMove(MovementEnum move = NOMOVEMENT)
         {
@@ -19,25 +22,26 @@ namespace FinalPOE
             int tries = 10;
             int i = 0;
 
-            System.Diagnostics.Debug.WriteLine("L - ({0},{1}), TARGET - ({2},{3})", X, Y, target.X, target.Y);
+            //System.Diagnostics.Debug.WriteLine("L - ({0},{1}), TARGET - ({2},{3})", X, Y, target.X, target.Y);
 
             if (vision[(int)move - 1] is EmptyTile || vision[(int)move - 1] is Item)
             {
-                if (move is UP)
+                if (move is UP && y - Target.Y > 0 || move is DOWN && y - Target.Y > 0)
                 {
                     return DOWN;
                 }
-                else if (move is DOWN)
+
+                if (move is UP && y - Target.Y < 0 || move is DOWN && y - Target.Y < 0)
                 {
                     return UP;
                 }
 
-                if (move is RIGHT)
+                if (move is RIGHT && x - Target.X > 0 || move is LEFT && x - Target.X < 0)
                 {
                     return LEFT;
                 }
 
-                if (move is LEFT)
+                if (move is LEFT && y - Target.Y < 0 || move is RIGHT && y - Target.Y < 0)
                 {
                     return RIGHT;
                 }
@@ -60,6 +64,11 @@ namespace FinalPOE
             }
 
             return moveDir;
+        }
+
+        public override string ToString()
+        {
+            return string.Format("Equipped :" + GetType().Name + " at [{0},{1}] ({2}) with Longsword\n({3}X{3})", x, y, damage, weapon.Durability, weapon.Damage);
         }
     }
 }

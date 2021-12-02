@@ -16,5 +16,10 @@ namespace FinalPOE
         {
             return DistanceTo(target) <= 2; // the distance at corners is technically 2 blocks away from the mage.
         }
+
+        public override string ToString()
+        {
+            return string.Format("Barehanded : " + GetType().Name + " at [{0},{1}] ({2})", x, y, damage);
+        }
     }
 }
