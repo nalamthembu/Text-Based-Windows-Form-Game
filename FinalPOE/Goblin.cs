@@ -9,9 +9,10 @@ namespace FinalPOE
     [Serializable]
     public class Goblin : Enemy
     {
-        public Goblin(int x, int y) : base(x,y, 10, 10) 
+        public Goblin(int x, int y) : base(x,y, 1, 10) 
         {
             weapon = new MeleeWeapon(Types.DAGGER); //spawns in with a dagger.
+            damage = 3;
         }
 
         public override MovementEnum ReturnMove(MovementEnum move)

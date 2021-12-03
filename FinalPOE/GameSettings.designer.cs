@@ -166,6 +166,7 @@ namespace FinalPOE
             this.lblSubtitle.TabIndex = 11;
             this.lblSubtitle.Text = "Game Settings";
             this.lblSubtitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblSubtitle.Click += new System.EventHandler(this.lblSubtitle_Click);
             // 
             // btnStart
             // 
@@ -265,6 +266,7 @@ namespace FinalPOE
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "GameSettings";
             this.Text = "Treasure Hunt (POE) : GameSettings";
+            this.Load += new System.EventHandler(this.GameSettings_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -150,6 +150,7 @@ namespace FinalPOE
 
                                     if (c is Hero)
                                         enemyAttackIndicator = "\nPlayer was attacked by Goblin!";
+                                    
                                     map.UpdateVision();
                                     break;
                                 }

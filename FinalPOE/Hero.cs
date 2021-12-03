@@ -11,7 +11,7 @@ namespace FinalPOE
         public Hero(int x, int y, int hp) : base(x, y, TileEnum.HERO)
         {
             damage = 2;
-            maxHp = 10;
+            maxHp = 100;
             this.hp = hp;
             maxHp = hp;
         }

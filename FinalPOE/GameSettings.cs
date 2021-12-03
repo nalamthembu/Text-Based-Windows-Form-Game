@@ -81,5 +81,15 @@ namespace FinalPOE
 
             gameWindow.Show();
         }
+
+        private void GameSettings_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblSubtitle_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
