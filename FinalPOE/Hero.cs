@@ -38,7 +38,15 @@ namespace FinalPOE
         public override string ToString()
         {
             string weaponString = (weapon is null) ? "Barehands" : weapon.WeaponType;
-            return string.Format("Player Stats:\nHP: {0}/{1}\nCurrent Weapon : {6}\nDamage: {2}\nWeapon Range: {7}\nWeapon Damage: {8}\nGold: {3}G\n[{4},{5}]", hp, maxHp, damage, GoldPurseTotal,x, y, weaponString, (weapon != null) ? weapon.Range : "1", (weapon != null) ? weapon.Damage : damage);
+            string withWeapon = "Player Stats:\nHP: {0}/{1}\nCurrent Weapon : {2}\nWeapon Range: {3}\nWeapon Damage: {4}\nGold: {5}G\n[{6},{7}]";
+            string withOutWeapon = "Player Stats:\nHP: {0}/{1}\nCurrent Weapon : {3}\nDamage: {4}\nGold: {3}G\n[{5},{6}]";
+
+            if (weapon is null)
+            {
+                return string.Format(withOutWeapon, hp, maxHp, weaponString, damage, goldPurseTotal, x, y);
+            }
+
+            return string.Format(withWeapon, hp, maxHp, weaponString, damage, weapon.Range, weapon.Damage, goldPurseTotal, x, y);
         }
     }
 }
