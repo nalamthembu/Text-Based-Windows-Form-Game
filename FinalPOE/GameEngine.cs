@@ -59,6 +59,7 @@ namespace FinalPOE
 
             MoveEnemies(move);
             //Character vision is updated in Map.UpdateVision()
+            
             return true;
         }
 
@@ -158,9 +159,12 @@ namespace FinalPOE
                         }
                     }
                 }
+
+                
             }
 
             map.UpdateVision();
+            
         }
 
         public Character PlayerAttack(MovementEnum dir)
@@ -176,6 +180,8 @@ namespace FinalPOE
                 return target;
             }
             return null;
+
+            EnemyAttacks();
         }
 
         const string SAVEDATA = "save_game.sgf";

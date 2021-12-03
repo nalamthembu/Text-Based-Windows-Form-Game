@@ -23,6 +23,7 @@ namespace FinalPOE
             set { goldPurseTotal = value; }
         }
 
+        public Map map;
         public int MaxHP { get { return maxHp; } }
         public int Damage { get { return damage; } }
 
@@ -92,6 +93,31 @@ namespace FinalPOE
         private void Equip(Weapon w)
         {
             weapon = w;
+        }
+
+        public void Loot()
+        {
+            foreach(Enemy e in map.EnemyArray)
+            {
+                if (e.IsDead())
+                {
+                    if(e is Mage m)
+                    {
+                        goldPurseTotal = goldPurseTotal + 3;
+                        System.Diagnostics.Debug.WriteLine("The player looted 3 GOLD");
+                    }
+
+                    if(e is Goblin g)
+                    {
+                        goldPurseTotal = goldPurseTotal + 1;
+                    }
+
+                    if(e is Leader l)
+                    {
+                        goldPurseTotal = goldPurseTotal + 2;
+                    }
+                }
+            }
         }
 
         public abstract MovementEnum ReturnMove(MovementEnum move = MovementEnum.NOMOVEMENT);
