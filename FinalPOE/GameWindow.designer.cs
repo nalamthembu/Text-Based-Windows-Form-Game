@@ -48,10 +48,10 @@ namespace FinalPOE
             // 
             // btnHelp
             // 
-            this.btnHelp.Location = new System.Drawing.Point(586, 309);
+            this.btnHelp.Location = new System.Drawing.Point(684, 357);
             this.btnHelp.Margin = new System.Windows.Forms.Padding(2);
             this.btnHelp.Name = "btnHelp";
-            this.btnHelp.Size = new System.Drawing.Size(70, 19);
+            this.btnHelp.Size = new System.Drawing.Size(82, 22);
             this.btnHelp.TabIndex = 7;
             this.btnHelp.Text = "Help";
             this.btnHelp.UseVisualStyleBackColor = true;
@@ -60,11 +60,12 @@ namespace FinalPOE
             // lblMapDisplay
             // 
             this.lblMapDisplay.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblMapDisplay.Font = new System.Drawing.Font("Courier New", 12F);
-            this.lblMapDisplay.Location = new System.Drawing.Point(140, 6);
+            this.lblMapDisplay.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblMapDisplay.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblMapDisplay.Location = new System.Drawing.Point(163, 7);
             this.lblMapDisplay.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblMapDisplay.Name = "lblMapDisplay";
-            this.lblMapDisplay.Size = new System.Drawing.Size(379, 322);
+            this.lblMapDisplay.Size = new System.Drawing.Size(442, 372);
             this.lblMapDisplay.TabIndex = 8;
             this.lblMapDisplay.Text = "label1";
             this.lblMapDisplay.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -72,160 +73,177 @@ namespace FinalPOE
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(55, 175);
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label1.Location = new System.Drawing.Point(64, 202);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(57, 13);
+            this.label1.Size = new System.Drawing.Size(65, 15);
             this.label1.TabIndex = 24;
             this.label1.Text = "Movement";
             // 
             // lblAttack
             // 
             this.lblAttack.AutoSize = true;
-            this.lblAttack.Location = new System.Drawing.Point(559, 175);
+            this.lblAttack.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblAttack.Location = new System.Drawing.Point(652, 202);
             this.lblAttack.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblAttack.Name = "lblAttack";
-            this.lblAttack.Size = new System.Drawing.Size(38, 13);
+            this.lblAttack.Size = new System.Drawing.Size(41, 15);
             this.lblAttack.TabIndex = 23;
             this.lblAttack.Text = "Attack";
             // 
             // btnAttackDown
             // 
-            this.btnAttackDown.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Bold);
-            this.btnAttackDown.ForeColor = System.Drawing.Color.Crimson;
-            this.btnAttackDown.Location = new System.Drawing.Point(562, 257);
+            this.btnAttackDown.BackColor = System.Drawing.Color.DimGray;
+            this.btnAttackDown.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnAttackDown.ForeColor = System.Drawing.Color.White;
+            this.btnAttackDown.Location = new System.Drawing.Point(656, 297);
             this.btnAttackDown.Margin = new System.Windows.Forms.Padding(2);
             this.btnAttackDown.Name = "btnAttackDown";
-            this.btnAttackDown.Size = new System.Drawing.Size(34, 32);
+            this.btnAttackDown.Size = new System.Drawing.Size(40, 37);
             this.btnAttackDown.TabIndex = 22;
             this.btnAttackDown.Text = "X";
-            this.btnAttackDown.UseVisualStyleBackColor = true;
+            this.btnAttackDown.UseVisualStyleBackColor = false;
             this.btnAttackDown.Click += new System.EventHandler(this.btnAttackDown_Click);
             // 
             // btnAttackRight
             // 
-            this.btnAttackRight.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Bold);
-            this.btnAttackRight.ForeColor = System.Drawing.Color.Crimson;
-            this.btnAttackRight.Location = new System.Drawing.Point(602, 225);
+            this.btnAttackRight.BackColor = System.Drawing.Color.DimGray;
+            this.btnAttackRight.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnAttackRight.ForeColor = System.Drawing.Color.White;
+            this.btnAttackRight.Location = new System.Drawing.Point(702, 260);
             this.btnAttackRight.Margin = new System.Windows.Forms.Padding(2);
             this.btnAttackRight.Name = "btnAttackRight";
-            this.btnAttackRight.Size = new System.Drawing.Size(34, 32);
+            this.btnAttackRight.Size = new System.Drawing.Size(40, 37);
             this.btnAttackRight.TabIndex = 21;
             this.btnAttackRight.Text = "○";
-            this.btnAttackRight.UseVisualStyleBackColor = true;
+            this.btnAttackRight.UseVisualStyleBackColor = false;
             this.btnAttackRight.Click += new System.EventHandler(this.btnAttackRight_Click);
             // 
             // btnAttackLeft
             // 
-            this.btnAttackLeft.Font = new System.Drawing.Font("Courier New", 13.8F, System.Drawing.FontStyle.Bold);
-            this.btnAttackLeft.ForeColor = System.Drawing.Color.Crimson;
-            this.btnAttackLeft.Location = new System.Drawing.Point(524, 225);
+            this.btnAttackLeft.BackColor = System.Drawing.Color.DimGray;
+            this.btnAttackLeft.Font = new System.Drawing.Font("Courier New", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnAttackLeft.ForeColor = System.Drawing.Color.White;
+            this.btnAttackLeft.Location = new System.Drawing.Point(611, 260);
             this.btnAttackLeft.Margin = new System.Windows.Forms.Padding(2);
             this.btnAttackLeft.Name = "btnAttackLeft";
-            this.btnAttackLeft.Size = new System.Drawing.Size(34, 32);
+            this.btnAttackLeft.Size = new System.Drawing.Size(40, 37);
             this.btnAttackLeft.TabIndex = 20;
             this.btnAttackLeft.Text = "□";
-            this.btnAttackLeft.UseVisualStyleBackColor = true;
+            this.btnAttackLeft.UseVisualStyleBackColor = false;
             this.btnAttackLeft.Click += new System.EventHandler(this.btnAttackLeft_Click);
             // 
             // btnAttackUp
             // 
-            this.btnAttackUp.Font = new System.Drawing.Font("Courier New", 13.8F, System.Drawing.FontStyle.Bold);
-            this.btnAttackUp.ForeColor = System.Drawing.Color.Crimson;
-            this.btnAttackUp.Location = new System.Drawing.Point(562, 197);
+            this.btnAttackUp.BackColor = System.Drawing.Color.DimGray;
+            this.btnAttackUp.Font = new System.Drawing.Font("Courier New", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnAttackUp.ForeColor = System.Drawing.Color.White;
+            this.btnAttackUp.Location = new System.Drawing.Point(656, 227);
             this.btnAttackUp.Margin = new System.Windows.Forms.Padding(2);
             this.btnAttackUp.Name = "btnAttackUp";
-            this.btnAttackUp.Size = new System.Drawing.Size(34, 28);
+            this.btnAttackUp.Size = new System.Drawing.Size(40, 32);
             this.btnAttackUp.TabIndex = 19;
             this.btnAttackUp.Text = "△";
-            this.btnAttackUp.UseVisualStyleBackColor = true;
+            this.btnAttackUp.UseVisualStyleBackColor = false;
             this.btnAttackUp.Click += new System.EventHandler(this.btnAttackUp_Click);
             // 
             // btnDown
             // 
-            this.btnDown.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Bold);
-            this.btnDown.ForeColor = System.Drawing.Color.Crimson;
-            this.btnDown.Location = new System.Drawing.Point(62, 257);
+            this.btnDown.BackColor = System.Drawing.Color.DimGray;
+            this.btnDown.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnDown.ForeColor = System.Drawing.Color.White;
+            this.btnDown.Location = new System.Drawing.Point(72, 297);
             this.btnDown.Margin = new System.Windows.Forms.Padding(2);
             this.btnDown.Name = "btnDown";
-            this.btnDown.Size = new System.Drawing.Size(34, 32);
+            this.btnDown.Size = new System.Drawing.Size(40, 37);
             this.btnDown.TabIndex = 18;
             this.btnDown.Text = "↓";
-            this.btnDown.UseVisualStyleBackColor = true;
+            this.btnDown.UseVisualStyleBackColor = false;
             this.btnDown.Click += new System.EventHandler(this.btnDown_Click);
             // 
             // btnRight
             // 
-            this.btnRight.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Bold);
-            this.btnRight.ForeColor = System.Drawing.Color.Crimson;
-            this.btnRight.Location = new System.Drawing.Point(101, 224);
+            this.btnRight.BackColor = System.Drawing.Color.DimGray;
+            this.btnRight.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnRight.ForeColor = System.Drawing.Color.White;
+            this.btnRight.Location = new System.Drawing.Point(118, 258);
             this.btnRight.Margin = new System.Windows.Forms.Padding(2);
             this.btnRight.Name = "btnRight";
-            this.btnRight.Size = new System.Drawing.Size(34, 32);
+            this.btnRight.Size = new System.Drawing.Size(40, 37);
             this.btnRight.TabIndex = 17;
             this.btnRight.Text = "→";
-            this.btnRight.UseVisualStyleBackColor = true;
+            this.btnRight.UseVisualStyleBackColor = false;
             this.btnRight.Click += new System.EventHandler(this.btnRight_Click);
             // 
             // btnLeft
             // 
-            this.btnLeft.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Bold);
-            this.btnLeft.ForeColor = System.Drawing.Color.Crimson;
-            this.btnLeft.Location = new System.Drawing.Point(23, 224);
+            this.btnLeft.BackColor = System.Drawing.Color.DimGray;
+            this.btnLeft.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnLeft.ForeColor = System.Drawing.Color.White;
+            this.btnLeft.Location = new System.Drawing.Point(27, 258);
             this.btnLeft.Margin = new System.Windows.Forms.Padding(2);
             this.btnLeft.Name = "btnLeft";
-            this.btnLeft.Size = new System.Drawing.Size(34, 32);
+            this.btnLeft.Size = new System.Drawing.Size(40, 37);
             this.btnLeft.TabIndex = 16;
             this.btnLeft.Text = "←";
-            this.btnLeft.UseVisualStyleBackColor = true;
+            this.btnLeft.UseVisualStyleBackColor = false;
             this.btnLeft.Click += new System.EventHandler(this.btnLeft_Click);
             // 
             // btnUp
             // 
-            this.btnUp.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Bold);
-            this.btnUp.ForeColor = System.Drawing.Color.Crimson;
-            this.btnUp.Location = new System.Drawing.Point(62, 193);
+            this.btnUp.BackColor = System.Drawing.Color.DimGray;
+            this.btnUp.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnUp.ForeColor = System.Drawing.Color.White;
+            this.btnUp.Location = new System.Drawing.Point(72, 223);
             this.btnUp.Margin = new System.Windows.Forms.Padding(2);
             this.btnUp.Name = "btnUp";
-            this.btnUp.Size = new System.Drawing.Size(34, 28);
+            this.btnUp.Size = new System.Drawing.Size(40, 32);
             this.btnUp.TabIndex = 15;
             this.btnUp.Text = "↑ ";
-            this.btnUp.UseVisualStyleBackColor = true;
+            this.btnUp.UseVisualStyleBackColor = false;
             this.btnUp.Click += new System.EventHandler(this.btnUp_Click);
             // 
             // lblInfo
             // 
             this.lblInfo.AutoSize = true;
-            this.lblInfo.Location = new System.Drawing.Point(524, 8);
+            this.lblInfo.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblInfo.Location = new System.Drawing.Point(611, 9);
             this.lblInfo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblInfo.Name = "lblInfo";
-            this.lblInfo.Size = new System.Drawing.Size(0, 13);
+            this.lblInfo.Size = new System.Drawing.Size(0, 15);
             this.lblInfo.TabIndex = 25;
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(40, 29);
+            this.btnSave.BackColor = System.Drawing.Color.DimGray;
+            this.btnSave.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnSave.Location = new System.Drawing.Point(47, 33);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(56, 20);
+            this.btnSave.Size = new System.Drawing.Size(65, 23);
             this.btnSave.TabIndex = 26;
             this.btnSave.Text = "Save";
-            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // lblSaveState
             // 
-            this.lblSaveState.Location = new System.Drawing.Point(12, 52);
+            this.lblSaveState.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblSaveState.Location = new System.Drawing.Point(14, 60);
+            this.lblSaveState.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSaveState.Name = "lblSaveState";
-            this.lblSaveState.Size = new System.Drawing.Size(114, 23);
+            this.lblSaveState.Size = new System.Drawing.Size(133, 27);
             this.lblSaveState.TabIndex = 27;
             this.lblSaveState.Text = "Save State";
             this.lblSaveState.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // GameWindow
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(667, 336);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.ClientSize = new System.Drawing.Size(941, 388);
             this.Controls.Add(this.lblSaveState);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.lblInfo);
