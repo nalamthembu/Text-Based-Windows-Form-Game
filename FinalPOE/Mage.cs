@@ -5,7 +5,10 @@ namespace FinalPOE
     [Serializable]
     public class Mage : Enemy
     {
-        public Mage(int x, int y) : base(x, y, 5, 5){}
+        public Mage(int x, int y) : base(x, y, 5, 5)
+        {
+            goldPurseTotal = 3;
+        }
 
         public override MovementEnum ReturnMove(MovementEnum move = MovementEnum.NOMOVEMENT)
         {
@@ -19,6 +22,11 @@ namespace FinalPOE
 
         public override string ToString()
         {
+            if (isBeingLooted)
+            {
+                return base.ToString();
+            }
+
             return string.Format("Barehanded : " + GetType().Name + " at [{0},{1}] ({2})", x, y, damage);
         }
     }

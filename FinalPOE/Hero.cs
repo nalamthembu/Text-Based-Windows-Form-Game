@@ -12,6 +12,7 @@ namespace FinalPOE
             maxHp = 100;
             this.hp = hp;
             maxHp = hp;
+            goldPurseTotal = 0; //Just incase.
         }
 
         public override MovementEnum ReturnMove(MovementEnum move = MovementEnum.NOMOVEMENT)
@@ -37,17 +38,17 @@ namespace FinalPOE
         {
             string weaponString = (weapon is null) ? "Barehands" : weapon.WeaponType;
             string withWeapon = "Player Stats:\nHP: {0}/{1}\nCurrent Weapon : {2}\nWeapon Range: {3}\nWeapon Damage: {4}\nGold: {5}G\n[{6},{7}]";
-            string withOutWeapon = "Player Stats:\nHP: {0}/{1}\nCurrent Weapon : {3}\nDamage: {4}\nGold: {3}G\n[{5},{6}]";
+            string withOutWeapon = "Player Stats:\nHP: {0}/{1}\nCurrent Weapon : {2}\nDamage: {3}\nGold: {4}G\n[{5},{6}]";
 
-            if (weapon is not null) Debug.WriteLine(weapon.WeaponType);
+            if (weapon is not null) Debug.WriteLine("Player has a " + weapon.WeaponType + " its damage is " + weapon.Damage);
 
 
-            if (weapon is null)
+            if (weapon is not null)
             {
-                return string.Format(withOutWeapon, hp, maxHp, weaponString, damage, goldPurseTotal, x, y);
+                return string.Format(withWeapon, hp, maxHp, weaponString, weapon.Range, weapon.Damage, goldPurseTotal, x,y);
             }
             else
-            return string.Format(withWeapon, hp, maxHp, weaponString, damage, weapon.Range, weapon.Damage, goldPurseTotal, x, y);
+                return string.Format(withOutWeapon, hp, maxHp, weaponString, damage, goldPurseTotal, x, y);
         }
     }
 }

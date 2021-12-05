@@ -13,6 +13,7 @@ namespace FinalPOE
         public Leader(int x, int y) : base(x, y, 2, 20) 
         {
             weapon = new MeleeWeapon(Types.LONGSWORD);
+            goldPurseTotal = 2;
         }
 
         public override MovementEnum ReturnMove(MovementEnum move = NOMOVEMENT)
@@ -73,6 +74,11 @@ namespace FinalPOE
 
         public override string ToString()
         {
+            if (isBeingLooted)
+            {
+                return base.ToString();
+            }
+
             return string.Format("Equipped :" + GetType().Name + " at [{0},{1}] ({2}) with Longsword\n({3}X{3})", x, y, damage, weapon.Durability, weapon.Damage);
         }
     }

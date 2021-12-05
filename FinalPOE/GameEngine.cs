@@ -169,19 +169,31 @@ namespace FinalPOE
 
         public Character PlayerAttack(MovementEnum dir)
         {
+            Hero h = map.Hero;
+
             int visionIndex = (int)dir;
-            if (map.Hero.Vision[visionIndex] is Character target)
+            
+            if (h.Vision[visionIndex] is Character c)
             {
-                target = (Character)map.Hero.Vision[visionIndex];
-                if (!target.IsDead())
+                if (!c.IsDead())
                 {
-                    map.Hero.Attack(target);
+                    map.Hero.Attack(c);
+
+                    if (c.IsDead())
+                    {
+                        c.isBeingLooted = true;
+                        map.Hero.Loot(c);
+                        Debug.WriteLine(c.GetType().Name + " was looted.");
+                    }
                 }
-                return target;
+
+                return c;
             }
-            return null;
+            
 
             EnemyAttacks();
+
+            return null;
         }
 
         const string SAVEDATA = "save_game.sgf";

@@ -1,5 +1,8 @@
-﻿namespace FinalPOE
+﻿using System;
+
+namespace FinalPOE
 {
+    [Serializable]
     public abstract class Weapon : Item
     {
         protected int damage;

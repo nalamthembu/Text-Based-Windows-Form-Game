@@ -1,10 +1,13 @@
-﻿namespace FinalPOE
+﻿using System;
+
+namespace FinalPOE
 {
     public enum Types
     {
         DAGGER, LONGSWORD
     }
 
+    [Serializable]
     public class MeleeWeapon : Weapon
     {
         public new int Range { get { return 1; } } //overridden accessor.

@@ -9,10 +9,11 @@ namespace FinalPOE
     [Serializable]
     public class Goblin : Enemy
     {
-        public Goblin(int x, int y) : base(x,y, 1, 10) 
+        public Goblin(int x, int y) : base(x,y, 3, 10) 
         {
             weapon = new MeleeWeapon(Types.DAGGER); //spawns in with a dagger.
-            damage = 3;
+
+            goldPurseTotal = 1;
         }
 
         public override MovementEnum ReturnMove(MovementEnum move)
@@ -29,7 +30,7 @@ namespace FinalPOE
                     return MovementEnum.NOMOVEMENT;
                 }
             }
-            while (!(vision[moveDir] is EmptyTile)); //Need to figure out why adding an item check here stops the goblins from moving.
+            while (!(vision[moveDir] is EmptyTile or Item)); //Need to figure out why adding an item check here stops the goblins from moving.
 
             return (MovementEnum) moveDir;
         }

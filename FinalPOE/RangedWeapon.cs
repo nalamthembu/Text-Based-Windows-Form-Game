@@ -1,4 +1,4 @@
-﻿using System.IO;
+﻿using System;
 
 namespace FinalPOE
 {
@@ -9,6 +9,7 @@ namespace FinalPOE
 
     //Long range weapon symbol - ✦ (OLD), 🔫 <- NEW (U+1F52B) -- didn't work.
 
+    [Serializable]
     public class RangedWeapon : Weapon
     {
         public new int Range { get { return base.range; } }

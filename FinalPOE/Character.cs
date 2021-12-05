@@ -1,5 +1,5 @@
 ﻿using System;
-
+using System.Diagnostics;
 namespace FinalPOE
 {
     [Serializable]
@@ -16,6 +16,8 @@ namespace FinalPOE
             get { return hp; } 
             set { hp = (hp < 0) ? 0 : value;} 
         }
+
+        public bool isBeingLooted = false;
 
         public int GoldPurseTotal
         {
@@ -95,28 +97,15 @@ namespace FinalPOE
             weapon = w;
         }
 
-        public void Loot()
+        public void Loot(Character characterToLoot)
         {
-            foreach(Enemy e in map.EnemyArray)
+            goldPurseTotal += characterToLoot.goldPurseTotal; //Yeet his cash.
+
+            Debug.WriteLine(characterToLoot.GetType().Name + " was looted.");
+
+            if (characterToLoot.weapon is not null && weapon is null) //If he's packing heat and you're not...
             {
-                if (e.IsDead())
-                {
-                    if(e is Mage m)
-                    {
-                        goldPurseTotal = goldPurseTotal + 3;
-                        System.Diagnostics.Debug.WriteLine("The player looted 3 GOLD");
-                    }
-
-                    if(e is Goblin g)
-                    {
-                        goldPurseTotal = goldPurseTotal + 1;
-                    }
-
-                    if(e is Leader l)
-                    {
-                        goldPurseTotal = goldPurseTotal + 2;
-                    }
-                }
+                Equip(characterToLoot.weapon);//Take his heater.
             }
         }
 

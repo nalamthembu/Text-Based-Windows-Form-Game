@@ -9,6 +9,7 @@ namespace FinalPOE
     {
         [NonSerialized]
         protected Random random = new Random();
+       
 
         public Enemy(int x, int y, int damage, int maxHp) : base(x, y, TileEnum.ENEMY)
         {
@@ -19,6 +20,16 @@ namespace FinalPOE
 
         public override string ToString()
         {
+            if (isBeingLooted)
+            {
+                string textToReturn =
+                    (weapon is not null) ? String.Format("\n{0} Was Looted\n{0} : -{1}\n{0} : -1{2} Gold\n{3}: +{1}\n{3} : +{2} Gold", GetType().Name, weapon.WeaponType, goldPurseTotal, "Player")
+                    : String.Format("\n{0} Was Looted\n{0} : -1{1} Gold\n{2} : +{1} Gold", GetType().Name, goldPurseTotal, "Player");
+
+                isBeingLooted = false;
+                return textToReturn;
+            }
+
             return string.Format(GetType().Name + " at [{0},{1}] ({2})", x,y, damage);
         }
     }
