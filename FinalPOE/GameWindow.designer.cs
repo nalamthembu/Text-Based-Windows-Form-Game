@@ -44,6 +44,7 @@ namespace FinalPOE
             this.lblInfo = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
             this.lblSaveState = new System.Windows.Forms.Label();
+            this.btnShop = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnHelp
@@ -238,12 +239,23 @@ namespace FinalPOE
             this.lblSaveState.Text = "Save State";
             this.lblSaveState.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // btnShop
+            // 
+            this.btnShop.Location = new System.Drawing.Point(766, 265);
+            this.btnShop.Name = "btnShop";
+            this.btnShop.Size = new System.Drawing.Size(163, 28);
+            this.btnShop.TabIndex = 28;
+            this.btnShop.Text = "{Weapon}";
+            this.btnShop.UseVisualStyleBackColor = true;
+            this.btnShop.Click += new System.EventHandler(this.btnShop_Click);
+            // 
             // GameWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(941, 388);
+            this.Controls.Add(this.btnShop);
             this.Controls.Add(this.lblSaveState);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.lblInfo);
@@ -285,5 +297,6 @@ namespace FinalPOE
         private System.Windows.Forms.Label lblInfo;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Label lblSaveState;
+        private System.Windows.Forms.Button btnShop;
     }
 }

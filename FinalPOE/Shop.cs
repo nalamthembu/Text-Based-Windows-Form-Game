@@ -2,6 +2,7 @@
 
 namespace FinalPOE
 {
+    [Serializable]
     public class Shop
     {
         Weapon[] weaponsInStock;
@@ -10,15 +11,17 @@ namespace FinalPOE
         char buyerSymbol;
         Character buyer; //might need this, since the qPaper doesn't explain how this class knows who the buyer is.
 
-        public Shop(char buyerSymbol)
+        public Shop(Character buyer)
         {
             weaponsInStock = new Weapon[3];
-            this.buyerSymbol = buyerSymbol;
+            
 
             for(int i = 0; i < weaponsInStock.Length; i++)
             {
                 weaponsInStock[i] = RandomWeapon();
             }
+
+            this.buyer = buyer;
         }
 
         Weapon RandomWeapon()

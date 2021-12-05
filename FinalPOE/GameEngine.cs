@@ -18,11 +18,12 @@ namespace FinalPOE
         public GameEngine(int minH, int minW, int MaxH, int MaxW, int numEnemy, int numGold, int numWeapon)
         {
             map = new Map(minH, minW, MaxH, MaxW,numEnemy, numGold, numWeapon);
+            shop = new Shop(map.Hero);
         }
 
         public GameEngine()
         {
-
+            shop = new Shop(map.Hero);
         }
 
 

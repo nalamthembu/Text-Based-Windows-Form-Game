@@ -1,7 +1,7 @@
 ﻿using System;
 using static FinalPOE.MovementEnum;
 using System.Windows.Forms;
-
+using System.Diagnostics;
 namespace FinalPOE
 {
     public partial class GameWindow : Form
@@ -19,12 +19,21 @@ namespace FinalPOE
 
         private void RefreshWindow()
         {
-            if (h == null)
+            if (h is null)
             {
                 h = engine.Map.Hero;
             }
 
+            if (engine.Shop is not null)
+            {
+                btnShop.Text = engine.Shop.DisplayWeapon(0);
+
+                btnShop.Enabled = engine.Shop.CanBuy(0);
+            }
+
             lblMapDisplay.Text = engine.Map.ToString();
+
+            Debug.WriteLine("Player Total : " + h.GoldPurseTotal);
         }
 
         public void GetGameSetForm(GameSettings settings)
@@ -148,6 +157,13 @@ namespace FinalPOE
         {
             engine.Save();
             lblSaveState.Text = "Game Saved!";
+        }
+
+        private void btnShop_Click(object sender, EventArgs e)
+        {
+            engine.Shop.Buy(0);
+            RefreshWindow();
+            RefreshHUD();
         }
     }
 }
