@@ -8,7 +8,7 @@ namespace FinalPOE
     public abstract class Enemy : Character
     {
         [NonSerialized]
-        protected Random random = new Random();
+        protected static Random random = new Random();
        
 
         public Enemy(int x, int y, int damage, int maxHp) : base(x, y, TileEnum.ENEMY)

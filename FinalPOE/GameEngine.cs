@@ -23,7 +23,6 @@ namespace FinalPOE
 
         public GameEngine()
         {
-            shop = new Shop(map.Hero);
         }
 
 
@@ -225,6 +224,11 @@ namespace FinalPOE
             }
 
             stream.Close();
+
+            if (shop is null)
+            {
+                shop = new Shop(map.Hero);
+            }
 
             System.Diagnostics.Debug.WriteLine("Loaded Successfully");
         }
