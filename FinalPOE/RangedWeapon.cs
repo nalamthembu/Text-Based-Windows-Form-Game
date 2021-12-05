@@ -18,6 +18,7 @@ namespace FinalPOE
             switch(rangedTypes)
             {
                 case RangedTypes.RIFLE:
+                    weaponType = "Rifle";
                     durability = 3;
                     range = 3;
                     damage = 5;
@@ -25,6 +26,7 @@ namespace FinalPOE
                     break;
 
                 case RangedTypes.LONGBOW:
+                    weaponType = "Longbow";
                     durability = 4;
                     range = 2;
                     damage = 4;
