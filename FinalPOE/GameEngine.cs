@@ -174,7 +174,27 @@ namespace FinalPOE
             Character c = null;
 
             int visionIndex = (int)dir;
-            
+
+            /*if (h.Weapon is not null)
+            {
+                for (int i = 1; i < h.Weapon.Range; i++)
+                {
+                    switch (dir)
+                    {
+                        case UP:
+                            if (map.GetTileAt(map.Hero.X, map.Hero.Y - (i + 1)) is Character)
+                            {
+                                c = (Character)map.GetTileAt(map.Hero.X, map.Hero.Y - (i));
+                                if (c.IsDead() != true)
+                                    map.Hero.Attack(c);
+
+                                return c;
+                            }
+                            break;
+                    }
+                }
+            }*/
+             
             if (h.Vision[visionIndex] is Character thisCharacter)
             {
                 c = thisCharacter;

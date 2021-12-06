@@ -41,7 +41,9 @@ namespace FinalPOE
         public virtual void Attack(Character target) 
         {
             if (weapon is not null)
+            {
                 target.HP -= weapon.Damage;
+            }
             else target.HP -= damage;
         }
 
