@@ -4,6 +4,7 @@
     <OutputType>WinExe</OutputType>
     <TargetFramework>net5.0-windows</TargetFramework>
     <UseWindowsForms>true</UseWindowsForms>
+    <ApplicationIcon>theif_mask_criminal_person_icon_191318.ico</ApplicationIcon>
   </PropertyGroup>
 
 </Project>
