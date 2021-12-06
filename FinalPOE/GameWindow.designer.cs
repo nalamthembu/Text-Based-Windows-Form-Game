@@ -44,7 +44,9 @@ namespace FinalPOE
             this.lblInfo = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
             this.lblSaveState = new System.Windows.Forms.Label();
-            this.btnShop = new System.Windows.Forms.Button();
+            this.btnShop0 = new System.Windows.Forms.Button();
+            this.btnShop1 = new System.Windows.Forms.Button();
+            this.btnShop2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnHelp
@@ -239,15 +241,35 @@ namespace FinalPOE
             this.lblSaveState.Text = "Save State";
             this.lblSaveState.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // btnShop
+            // btnShop0
             // 
-            this.btnShop.Location = new System.Drawing.Point(766, 265);
-            this.btnShop.Name = "btnShop";
-            this.btnShop.Size = new System.Drawing.Size(163, 28);
-            this.btnShop.TabIndex = 28;
-            this.btnShop.Text = "{Weapon}";
-            this.btnShop.UseVisualStyleBackColor = true;
-            this.btnShop.Click += new System.EventHandler(this.btnShop_Click);
+            this.btnShop0.Location = new System.Drawing.Point(766, 231);
+            this.btnShop0.Name = "btnShop0";
+            this.btnShop0.Size = new System.Drawing.Size(163, 28);
+            this.btnShop0.TabIndex = 28;
+            this.btnShop0.Text = "{Weapon}";
+            this.btnShop0.UseVisualStyleBackColor = true;
+            this.btnShop0.Click += new System.EventHandler(this.btnShop_Click);
+            // 
+            // btnShop1
+            // 
+            this.btnShop1.Location = new System.Drawing.Point(766, 263);
+            this.btnShop1.Name = "btnShop1";
+            this.btnShop1.Size = new System.Drawing.Size(163, 28);
+            this.btnShop1.TabIndex = 29;
+            this.btnShop1.Text = "{Weapon}";
+            this.btnShop1.UseVisualStyleBackColor = true;
+            this.btnShop1.Click += new System.EventHandler(this.btnShop1_Click);
+            // 
+            // btnShop2
+            // 
+            this.btnShop2.Location = new System.Drawing.Point(766, 297);
+            this.btnShop2.Name = "btnShop2";
+            this.btnShop2.Size = new System.Drawing.Size(163, 28);
+            this.btnShop2.TabIndex = 30;
+            this.btnShop2.Text = "{Weapon}";
+            this.btnShop2.UseVisualStyleBackColor = true;
+            this.btnShop2.Click += new System.EventHandler(this.btnShop2_Click);
             // 
             // GameWindow
             // 
@@ -255,7 +277,9 @@ namespace FinalPOE
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(941, 388);
-            this.Controls.Add(this.btnShop);
+            this.Controls.Add(this.btnShop2);
+            this.Controls.Add(this.btnShop1);
+            this.Controls.Add(this.btnShop0);
             this.Controls.Add(this.lblSaveState);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.lblInfo);
@@ -297,6 +321,8 @@ namespace FinalPOE
         private System.Windows.Forms.Label lblInfo;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Label lblSaveState;
-        private System.Windows.Forms.Button btnShop;
+        private System.Windows.Forms.Button btnShop0;
+        private System.Windows.Forms.Button btnShop1;
+        private System.Windows.Forms.Button btnShop2;
     }
 }

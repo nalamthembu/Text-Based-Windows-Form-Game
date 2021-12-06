@@ -26,9 +26,13 @@ namespace FinalPOE
 
             if (engine.Shop is not null)
             {
-                btnShop.Text = engine.Shop.DisplayWeapon(0);
+                btnShop0.Text = engine.Shop.DisplayWeapon(0);
+                btnShop1.Text = engine.Shop.DisplayWeapon(1);
+                btnShop2.Text = engine.Shop.DisplayWeapon(2);
 
-                btnShop.Enabled = engine.Shop.CanBuy(0);
+                btnShop0.Enabled = engine.Shop.CanBuy(0);
+                btnShop1.Enabled = engine.Shop.CanBuy(1);
+                btnShop2.Enabled = engine.Shop.CanBuy(2);
             }
 
             lblMapDisplay.Text = engine.Map.ToString();
@@ -161,6 +165,20 @@ namespace FinalPOE
         private void btnShop_Click(object sender, EventArgs e)
         {
             engine.Shop.Buy(0);
+            RefreshWindow();
+            RefreshHUD();
+        }
+
+        private void btnShop1_Click(object sender, EventArgs e)
+        {
+            engine.Shop.Buy(1);
+            RefreshWindow();
+            RefreshHUD();
+        }
+
+        private void btnShop2_Click(object sender, EventArgs e)
+        {
+            engine.Shop.Buy(2);
             RefreshWindow();
             RefreshHUD();
         }

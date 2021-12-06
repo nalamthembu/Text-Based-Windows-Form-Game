@@ -38,7 +38,13 @@ namespace FinalPOE
 
         public Character(int x, int y, TileEnum tileType) : base(x, y, tileType) { }
 
-        public virtual void Attack(Character target) { target.HP -= damage; System.Diagnostics.Debug.WriteLine("Player took {0} damage", damage); }
+        public virtual void Attack(Character target) 
+        {
+            if (weapon is not null)
+                target.HP -= weapon.Damage;
+            else target.HP -= damage;
+        }
+
         public bool IsDead() { return hp <= 0; }
         public virtual bool CheckRange(Character target)
         {
