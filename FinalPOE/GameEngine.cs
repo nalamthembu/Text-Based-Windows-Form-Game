@@ -84,7 +84,10 @@ namespace FinalPOE
                     {
                         e.PickUp(possibleItem);
 
-                        Debug.WriteLine(e.GetType().Name + " has picked up a " + possibleItem.GetType().Name);
+                        if (possibleItem is Weapon w) //Debugging stuff for the marker to see in the output whilst Marking.
+                        Debug.WriteLine(e.GetType().Name + " has picked up a " + w.WeaponType);
+                        else
+                            Debug.WriteLine(e.GetType().Name + " has picked up a " + possibleItem.GetType().Name);
                     }
 
                     map.UpdateVision();
@@ -126,10 +129,10 @@ namespace FinalPOE
                                     }
 
                                     if (c is Hero)
-                                        enemyAttackIndicator = "\nPlayer was attacked by Mage!";
+                                        enemyAttackIndicator = "\nPlayer was attacked by " + e.GetType().Name + "!";
 
                                     if (c is Enemy)
-                                        System.Diagnostics.Debug.WriteLine("Enemy attacked by Mage");
+                                        Debug.WriteLine("Enemy attacked by " + e.GetType().Name + ".");
                                     map.UpdateVision();
                                 }
                             }
@@ -150,7 +153,7 @@ namespace FinalPOE
                                     }
 
                                     if (c is Hero)
-                                        enemyAttackIndicator = "\nPlayer was attacked by Goblin!";
+                                        enemyAttackIndicator = "\nPlayer was attacked by " + e.GetType().Name + "!";
                                     
                                     map.UpdateVision();
                                     break;
@@ -171,10 +174,14 @@ namespace FinalPOE
         {
             Hero h = map.Hero;
 
+            Character c = null;
+
             int visionIndex = (int)dir;
             
-            if (h.Vision[visionIndex] is Character c)
+            if (h.Vision[visionIndex] is Character thisCharacter)
             {
+                c = thisCharacter;
+
                 if (!c.IsDead())
                 {
                     map.Hero.Attack(c);
@@ -186,14 +193,11 @@ namespace FinalPOE
                         Debug.WriteLine(c.GetType().Name + " was looted.");
                     }
                 }
-
-                return c;
             }
-            
 
             EnemyAttacks();
 
-            return null;
+            return c;
         }
 
         const string SAVEDATA = "save_game.sgf";

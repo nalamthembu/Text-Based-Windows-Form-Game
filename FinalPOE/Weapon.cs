@@ -2,7 +2,14 @@
 
 namespace FinalPOE
 {
+   
+    public enum Types
+    {
+        DAGGER, LONGSWORD, RIFLE, LONGBOW
+    }
+
     [Serializable]
+
     public abstract class Weapon : Item
     {
         protected int damage;
@@ -13,7 +20,7 @@ namespace FinalPOE
         public char symbol;
 
         public int Damage { get { return damage; } }
-        public int Range { get { return range; } }
+        public virtual int Range { get { return range; } }
         public int Durability { get { return durability; } }
         public int Cost { get { return cost; } }
 

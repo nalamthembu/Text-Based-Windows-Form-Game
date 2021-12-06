@@ -18,7 +18,7 @@ namespace FinalPOE
 
             for(int i = 0; i < weaponsInStock.Length; i++)
             {
-                weaponsInStock[i] = RandomWeapon();
+                weaponsInStock[i] = RandomWeapon(); //Weapon array initialised to three randomised weapons
             }
 
             this.buyer = buyer;
@@ -37,10 +37,10 @@ namespace FinalPOE
                     return new MeleeWeapon(Types.LONGSWORD);
 
                 case 2:
-                    return new RangedWeapon(RangedTypes.LONGBOW);
+                    return new RangedWeapon(Types.LONGBOW);
 
                 case 3:
-                    return new RangedWeapon(RangedTypes.RIFLE);
+                    return new RangedWeapon(Types.RIFLE);
             }
 
             //If we end up here, something went very VERY wrong.
@@ -59,7 +59,7 @@ namespace FinalPOE
             weaponsInStock[num] = RandomWeapon();
         }
 
-        public string DisplayWeapon(int num) //Triggered by form button.
+        public string DisplayWeapon(int num) //Display weapon formats a weapon string to be shown on Form.
         {
             return 
                 String.Format("Buy {0} ({1} Gold)", 

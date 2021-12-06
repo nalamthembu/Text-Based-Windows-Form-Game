@@ -2,11 +2,6 @@
 
 namespace FinalPOE
 {
-    public enum Types
-    {
-        DAGGER, LONGSWORD
-    }
-
     [Serializable]
     public class MeleeWeapon : Weapon
     {

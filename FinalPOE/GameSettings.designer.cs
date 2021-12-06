@@ -153,7 +153,7 @@ namespace FinalPOE
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(310, 63);
             this.lblTitle.TabIndex = 10;
-            this.lblTitle.Text = "Treasure Hunt";
+            this.lblTitle.Text = "The Hunt";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblSubtitle
@@ -205,7 +205,7 @@ namespace FinalPOE
             this.lblError.Location = new System.Drawing.Point(13, 400);
             this.lblError.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblError.Name = "lblError";
-            this.lblError.Size = new System.Drawing.Size(310, 37);
+            this.lblError.Size = new System.Drawing.Size(310, 80);
             this.lblError.TabIndex = 15;
             this.lblError.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -243,7 +243,7 @@ namespace FinalPOE
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(336, 455);
+            this.ClientSize = new System.Drawing.Size(336, 501);
             this.Controls.Add(this.txtWeaponDrop);
             this.Controls.Add(this.lblWeaponDrop);
             this.Controls.Add(this.btnLoad);
@@ -265,7 +265,7 @@ namespace FinalPOE
             this.Controls.Add(this.lblMinWidth);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "GameSettings";
-            this.Text = "Treasure Hunt (POE) : GameSettings";
+            this.Text = "The Hunt (POE) : GameSettings";
             this.Load += new System.EventHandler(this.GameSettings_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

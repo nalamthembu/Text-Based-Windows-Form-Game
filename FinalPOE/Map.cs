@@ -168,8 +168,8 @@ namespace FinalPOE
                             newTile = new Leader(x, y); //the hero would have been created by now.
 
                             Leader l = (Leader)newTile;
-                            l.Target = hero; //setting the hero as the target.
-                            newTile = l; //reassigningg the newTile.
+                            l.Target = hero; //Target Character variable initialised
+                            newTile = l; //re-assigning the newTile.
                         }
                     }
 
@@ -199,9 +199,9 @@ namespace FinalPOE
                     {
                         if (r.Next(0, 2) == 1)//50% chance of spawning a longbow.
                         {
-                            newTile = new RangedWeapon(RangedTypes.LONGBOW, x, y);
+                            newTile = new RangedWeapon(Types.LONGBOW, x, y);
                         }
-                        else newTile = new RangedWeapon(RangedTypes.RIFLE, x, y);
+                        else newTile = new RangedWeapon(Types.RIFLE, x, y);
                     }
                     break;
             }

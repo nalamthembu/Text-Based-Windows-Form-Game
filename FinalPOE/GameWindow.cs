@@ -127,8 +127,7 @@ namespace FinalPOE
 
             if (attackedTarget != null)
             {
-                lblInfo.Text = "Player Attacked:\n" + attackedTarget.ToString()+
-                    "\nTarget HP : " + attackedTarget.HP;
+                lblInfo.Text = "Player Attacked:\n" + attackedTarget.ToString();
             }
             else
             {

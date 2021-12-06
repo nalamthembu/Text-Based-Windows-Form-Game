@@ -48,7 +48,7 @@ namespace FinalPOE
             }
             catch(Exception)
             {
-                lblError.Text = "Please review your entries, there should only be numbers, no decimals, no blanks.";
+                lblError.Text = "Please review your entries, there should only be numbers, no decimals, no blanks, no letters, no equations.\nONLY NUMBERS.";
             }
         }
 

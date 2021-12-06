@@ -68,7 +68,7 @@ namespace FinalPOE
             this.lblMapDisplay.Name = "lblMapDisplay";
             this.lblMapDisplay.Size = new System.Drawing.Size(442, 372);
             this.lblMapDisplay.TabIndex = 8;
-            this.lblMapDisplay.Text = "label1";
+            this.lblMapDisplay.Text = "{Game}";
             this.lblMapDisplay.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label1
@@ -274,7 +274,7 @@ namespace FinalPOE
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "GameWindow";
-            this.Text = "GameWindow";
+            this.Text = "The Hunt (POE)";
             this.Load += new System.EventHandler(this.GameWindow_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

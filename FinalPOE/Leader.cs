@@ -10,7 +10,7 @@ namespace FinalPOE
 
         public Tile Target { get { return target; } set { target = value; } }
 
-        public Leader(int x, int y) : base(x, y, 2, 20) 
+        public Leader(int x, int y) : base(x, y, 2, 20) //Leader stats (damage and HP)
         {
             weapon = new MeleeWeapon(Types.LONGSWORD);
             goldPurseTotal = 2;
@@ -21,10 +21,11 @@ namespace FinalPOE
             MovementEnum moveDir = NOMOVEMENT;
 
             int tries = 10;
-            int i = 0;
+            int i;
 
             //System.Diagnostics.Debug.WriteLine("L - ({0},{1}), TARGET - ({2},{3})", X, Y, target.X, target.Y);
 
+            //MoveTowards
             if (vision[(int)move - 1] is EmptyTile || vision[(int)move - 1] is Item)
             {
                 if (move is UP && y - Target.Y > 0 || move is DOWN && y - Target.Y > 0)
@@ -52,13 +53,15 @@ namespace FinalPOE
                     return NOMOVEMENT;
                 }
             }
+            //End of MoveTowards
 
+            //Randomise if all else fails.
             do
             {
                 i = random.Next(0, 4);
 
                 if (tries == 0)
-                    break;
+                    break;//In-case Leader is completely blocked off we don't want them continuing to look.
 
                 tries--;
             }
@@ -79,7 +82,9 @@ namespace FinalPOE
                 return base.ToString();
             }
 
-            return string.Format("Equipped :" + GetType().Name + " at [{0},{1}] ({2}) with Longsword\n({3}X{3})", x, y, damage, weapon.Durability, weapon.Damage);
+            return string.Format("Equipped:" + GetType().Name + 
+                "({0}/{1}HP) at [{2},{3}] with {4}\n({5}X{6})",
+                hp, maxHp, x,y, weapon.WeaponType, weapon.Durability, weapon.Damage);
         }
     }
 }

@@ -30,6 +30,13 @@ namespace FinalPOE
                 return textToReturn;
             }
 
+            if (this is Goblin)
+            {
+                return string.Format("Equipped:" + GetType().Name +
+                 "({0}/{1}HP) at [{2},{3}] with {4}\n({5}X{6})",
+                 hp, maxHp, x, y, weapon.WeaponType, weapon.Durability, weapon.Damage);
+            }
+
             return string.Format(GetType().Name + " at [{0},{1}] ({2})", x,y, damage);
         }
     }
